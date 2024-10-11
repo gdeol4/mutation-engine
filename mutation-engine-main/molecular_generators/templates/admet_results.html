@@ -1,0 +1,60 @@
+<div class="overflow-x-auto">
+    <table class="table w-full">
+        <thead>
+            <tr>
+                <th>InChIKey</th>
+                <th>Ames</th>
+                <th>BBB</th>
+                <th>Bioavailability</th>
+                <th>Caco2</th>
+                <th>Clearance Hepatocyte</th>
+                <th>Clearance Microsome</th>
+                <th>CYP2C9</th>
+                <th>CYP2C9 Substrate</th>
+                <th>CYP2D6</th>
+                <th>CYP2D6 Substrate</th>
+                <th>CYP3A4</th>
+                <th>CYP3A4 Substrate</th>
+                <th>DILI</th>
+                <th>Half Life</th>
+                <th>hERG</th>
+                <th>HIA</th>
+                <th>LD50</th>
+                <th>Lipophilicity</th>
+                <th>PGP</th>
+                <th>PPBR</th>
+                <th>Solubility</th>
+                <th>VDSS</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row.inchikey }}</td>
+                <td>{{ row.ames }}</td>
+                <td>{{ row.bbb }}</td>
+                <td>{{ row.bioavailability }}</td>
+                <td>{{ row.caco2 }}</td>
+                <td>{{ row.clearance_hepatocyte }}</td>
+                <td>{{ row.clearance_microsome }}</td>
+                <td>{{ row.cyp2c9 }}</td>
+                <td>{{ row.cyp2c9_substrate }}</td>
+                <td>{{ row.cyp2d6 }}</td>
+                <td>{{ row.cyp2d6_substrate }}</td>
+                <td>{{ row.cyp3a4 }}</td>
+                <td>{{ row.cyp3a4_substrate }}</td>
+                <td>{{ row.dili }}</td>
+                <td>{{ row.half_life }}</td>
+                <td>{{ row.herg }}</td>
+                <td>{{ row.hia }}</td>
+                <td>{{ row.ld50 }}</td>
+                <td>{{ row.lipophilicity }}</td>
+                <td>{{ row.pgp }}</td>
+                <td>{{ row.ppbr }}</td>
+                <td>{{ row.solubility }}</td>
+                <td>{{ row.vdss }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

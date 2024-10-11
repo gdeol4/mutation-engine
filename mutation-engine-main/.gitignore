@@ -1,0 +1,5 @@
+
+*.pyc
+testing/.ipynb_checkpoints/ros_filter-checkpoint.ipynb
+*.bak
+*.dat

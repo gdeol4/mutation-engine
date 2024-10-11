@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-3xl font-bold text-zinc-800 dark:text-white mb-10">Molecular generation pipeline</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+            <label for="seedMolecule" class="block text-sm font-medium text-zinc-700 dark:text-zinc-200 mb-1">Seed molecule</label>
+            <select id="seedMolecule" class="block w-full pl-3 pr-10 py-2 text-base border-zinc-300 dark:border-zinc-700 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm rounded-md bg-zinc-100 dark:bg-zinc-800 text-zinc-800 dark:text-white">
+                <option>luteolin</option>
+                <option>chrysin</option>
+                <option>resveratrol</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="algorithm" class="block text-sm font-medium text-zinc-700 dark:text-zinc-200 mb-1">Generation algorithm</label>
+            <div class="space-y-2">
+                <div>
+                    <input type="radio" id="stonedSelfies" name="algorithm" value="stonedSelfies" class="text-blue-600 border-zinc-300 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-700">
+                    <label for="stonedSelfies" class="ml-2 text-sm text-zinc-600 dark:text-zinc-300">STONED SELFIES</label>
+                </div>
+                <div>
+                    <input type="radio" id="cProMG" name="algorithm" value="cProMG" class="text-blue-600 border-zinc-300 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-700">
+                    <label for="cProMG" class="ml-2 text-sm text-zinc-600 dark:text-zinc-300">CProMG</label>
+                </div>
+                <div>
+                    <input type="radio" id="reinvent4" name="algorithm" value="reinvent4" class="text-blue-600 border-zinc-300 focus:ring-blue-500 dark:border-zinc-700 dark:bg-zinc-700">
+                    <label for="reinvent4" class="ml-2 text-sm text-zinc-600 dark:text-zinc-300">REINVENT 4</label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="mt-6 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            hx-get="{% url 'generate_and_process_mutants' %}"
+            hx-target="#result">
+        Generate Mutants
+    </button>
+
+    <button class="mt-6 bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+            hx-get="{% url 'predict_admet' %}"
+            hx-target="#result">
+        Predict ADMET
+    </button>
+    <button class="mt-6 bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded"
+        hx-get="{% url 'predict_and_upload_binding_affinities' %}"
+        hx-target="#result">
+    Predict Binding Affinities
+    </button>
+    
+    <div id="result" class="mt-8 overflow-x-auto"></div>
+{% endblock %}

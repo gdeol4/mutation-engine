@@ -1,0 +1,42 @@
+<div class="overflow-x-auto">
+    <table class="table w-full">
+        <thead>
+            <tr>
+                <th>InChIKey</th>
+                <th>ALOX5 (uM)</th>
+                <th>CASP1 (uM)</th>
+                <th>COX1 (uM)</th>
+                <th>FLAP (uM)</th>
+                <th>JAK1 (uM)</th>
+                <th>JAK2 (uM)</th>
+                <th>LCK (uM)</th>
+                <th>MAGL (uM)</th>
+                <th>MPGES1 (uM)</th>
+                <th>PDL1 (uM)</th>
+                <th>TRKA (uM)</th>
+                <th>TRKB (uM)</th>
+                <th>TYK2 (uM)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row.inchikey }}</td>
+                <td>{{ row.alox5_affinity_uM }}</td>
+                <td>{{ row.casp1_affinity_uM }}</td>
+                <td>{{ row.cox1_affinity_uM }}</td>
+                <td>{{ row.flap_affinity_uM }}</td>
+                <td>{{ row.jak1_affinity_uM }}</td>
+                <td>{{ row.jak2_affinity_uM }}</td>
+                <td>{{ row.lck_affinity_uM }}</td>
+                <td>{{ row.magl_affinity_uM }}</td>
+                <td>{{ row.mpges1_affinity_uM }}</td>
+                <td>{{ row.pdl1_affinity_uM }}</td>
+                <td>{{ row.trka_affinity_uM }}</td>
+                <td>{{ row.trkb_affinity_uM }}</td>
+                <td>{{ row.tyk2_affinity_uM }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

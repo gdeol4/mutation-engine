@@ -1,0 +1,32 @@
+<div class="overflow-x-auto">
+    <table class="table w-full">
+        <thead>
+            <tr>
+                <th>InChIKey</th>
+                <th>SMILES</th>
+                <th>Molecular Weight</th>
+                <th>nHet</th>
+                <th>nRot</th>
+                <th>nRing</th>
+                <th>nHa</th>
+                <th>nHd</th>
+                <th>LogP</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in rows %}
+            <tr>
+                <td>{{ row.inchikey }}</td>
+                <td>{{ row.smiles }}</td>
+                <td>{{ row.molecular_weight }}</td>
+                <td>{{ row.nhet }}</td>
+                <td>{{ row.nrot }}</td>
+                <td>{{ row.nring }}</td>
+                <td>{{ row.nha }}</td>
+                <td>{{ row.nhd }}</td>
+                <td>{{ row.logp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
